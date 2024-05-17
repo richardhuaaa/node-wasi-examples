@@ -3,6 +3,7 @@
 const fs = require("fs");
 const { WASI } = require("wasi");
 const path = require("path");
+const util = require('util');
 
 // const wasi = new WASI({
 //   preopens: {
@@ -24,11 +25,21 @@ const importObject = { wasi_snapshot_preview1: wasi.wasiImport };
 (async () => {
   const wasm = await WebAssembly.compile(
     fs.readFileSync(
-      // "./examples/rust-wasi-readfile/target/wasm32-wasi/debug/rust-wasi-readfile.wasm"
-      "./examples/assemblyscript-wasi/build/as-wasi-example.wasm"
+      "./examples/rust-wasi-helloworld-lib/target/wasm32-wasi/debug/rust_wasi_helloworld_lib.wasm",
+      // "./examples/rust-wasi-helloworld/target/wasm32-wasi/debug/rust-wasi-helloworld.wasm"
+      // "./examples/rust-wasi-readfile/target/wasm32-wasi/debug/rust_wasi_readfile.wasm"
+      // "./examples/assemblyscript-wasi/build/as-wasi-example.wasm"
     )
   );
   const instance = await WebAssembly.instantiate(wasm, importObject);
 
-  wasi.start(instance);
+  console.log(Object.getOwnPropertyNames(instance.exports));
+  wasi.initialize(instance);
+  // wasi.start(instance);
+
+  instance.exports.hello();
+  console.log(instance.exports.add(1, 2));
+  console.log(instance.exports.return_string());
+  // instance.exports.read_file();
+
 })();
