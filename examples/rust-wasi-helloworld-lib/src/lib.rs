@@ -1,28 +1,16 @@
-use wasm_bindgen::prelude::wasm_bindgen;
-// use wasm_bindgen::JsValue;
-
-// #[no_mangle]
-#[wasm_bindgen]
+#[no_mangle]
 pub fn add(left: usize, right: usize) -> usize {
     left + right
 }
 
-// #[no_mangle]
-#[wasm_bindgen]
+#[no_mangle]
 pub fn hello() {
     println!("Hello, world!");
 }
 
-// #[no_mangle]
-#[wasm_bindgen]
+#[no_mangle]
 pub fn return_string() -> String {
     "Returned a string".to_string()
-}
-
-// #[no_mangle]
-#[wasm_bindgen]
-pub fn input_string(input: String) {
-    println!("{}", input);
 }
 
 #[cfg(test)]
