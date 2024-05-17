@@ -1,5 +1,21 @@
 # WASI examples in NodeJS
 
+# Rich's additions
+
+The following is built into build commands in the package.json.
+
+Build the component from Rust in examples/rust-wasi2:
+
+https://component-model.bytecodealliance.org/language-support/rust.html
+
+Run the component from Node in the root directory:
+
+https://component-model.bytecodealliance.org/language-support/javascript.html
+
+Run `node wasi2.js`
+
+# Old
+
 To build the Rust examples:
 
 ```
