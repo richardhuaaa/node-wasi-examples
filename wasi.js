@@ -39,7 +39,10 @@ const importObject = { wasi_snapshot_preview1: wasi.wasiImport };
 
   instance.exports.hello();
   console.log(instance.exports.add(1, 2));
+  console.log("Returning a string");
   console.log(instance.exports.return_string());
+  console.log("Inputting a string");
+  instance.exports.input_string("hello");
   // instance.exports.read_file();
 
 })();
