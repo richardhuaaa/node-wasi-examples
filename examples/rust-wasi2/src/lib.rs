@@ -1,6 +1,9 @@
 #[allow(warnings)]
 mod bindings;
 
+use std::env;
+use std::fs;
+
 use bindings::exports::exports::Client;
 use bindings::exports::exports::Guest;
 use bindings::exports::exports::GuestClient;
@@ -22,6 +25,11 @@ impl GuestClient for ClientImpl {
 
     fn input_string(&self, input: String) {
         println!("{}", input);
+    }
+
+    fn read_file(&self, filepath: String) {
+        let contents = fs::read_to_string(filepath).expect("Something went wrong reading the file");
+        println!("Reading a file, contents:\n{}", contents);
     }
 }
 

@@ -9,5 +9,4 @@ console.log(client.add(3, 4));
 client.hello();
 console.log(client.returnString());
 client.inputString("Passed a string from Node to Rust");
-
-// console.log("1 + 2 = " + add(1, 2));
+client.readFile(process.cwd() + "/file.txt");

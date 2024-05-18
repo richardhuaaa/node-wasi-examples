@@ -8,6 +8,7 @@ world example {
             hello: func();
             return-string: func() -> string;
             input-string: func(input: string);
+            read-file: func(filepath: string);
         }
 
         hello-world: func() -> string;
