@@ -11,8 +11,15 @@ https://component-model.bytecodealliance.org/language-support/rust.html
 Run the component from Node in the root directory:
 
 https://component-model.bytecodealliance.org/language-support/javascript.html
+Run `node wasi2.js` or `npm start`
 
-Run `node wasi2.js`
+To add new functions you need to modify the wit file, here is a guide to syntax:
+
+https://component-model.bytecodealliance.org/design/wit.html
+
+If you need examples you can look at the wit tests for each feature:
+
+https://github.com/bytecodealliance/wit-bindgen/tree/main/tests/runtime
 
 # Old
 

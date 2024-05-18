@@ -2,5 +2,15 @@ package component:rust-wasi2;
 
 /// An example world for the component to target.
 world example {
-    export hello-world: func() -> string;
+    export exports: interface {
+        resource client {
+            add: func(a: u32, b: u32) -> u32;
+            hello: func();
+            return-string: func() -> string;
+            input-string: func(input: string);
+        }
+
+        hello-world: func() -> string;
+        get-client: func() -> client;
+    }
 }

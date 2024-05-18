@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "npm run build:rust && npm run build:node",
-    "build:rust": "pushd examples/rust-wasi2 && cargo component build --release; popd",
+    "build:rust": "pushd examples/rust-wasi2 && cargo component build --release && popd",
     "build:node": "jco transpile '/Users/rich/repos/node-wasi-examples/examples/rust-wasi2/target/wasm32-wasi/release/rust_wasi2.wasm' -o out-dir",
     "start": "node wasi2.js"
   },
